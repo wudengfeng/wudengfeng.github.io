@@ -24,20 +24,8 @@
 #以windows为例，自定义站点路径D:\BlogServer\site\ hugo new site D:\BlogServer\site\  #目录结构 archetypes/ content/ data/ layouts/ resources/ static/ themes/ config.toml  3.创建文章
 #被创建到content/下 hugo new hello.md #被创建到content/blog下 hugo new blog/HuGo搭建个人博客.md  #HuGo搭建个人博客.md有如下初始化内容 #去掉draft: true或者改为false才可以在运行时不指定buildDrafts时展示出该文章 title: &amp;quot;HuGo搭建个人博客&amp;quot; date: 2018-07-19T23:47:49+08:00 draft: true  4.安装皮肤
 到皮肤列表挑选好看的皮肤，下载到themes/中。多下几个慢慢挑
-#hugo-redlounge是我现在在用的一个皮肤 cd themes git clone https://https://github.com/tmaiaroto/hugo-redlounge.git cd ..  5.配置皮肤等参数
-#vim config.toml #很关键的一条，theme必须要写，不然就panic baseURL = &amp;quot;http://localhost/&amp;quot; languageCode = &amp;quot;cn&amp;quot; title = &amp;quot;爬山的博客&amp;quot; theme = &amp;quot;hugo-redlounge&amp;quot;  6.</description>
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>https://wudengfeng.github.io/blog/first/</link>
-      <pubDate>Wed, 18 Jul 2018 23:59:26 +0800</pubDate>
-      
-      <guid>https://wudengfeng.github.io/blog/first/</guid>
-      <description>HuGo搭建个人博客  安装hugo  在Hugo Releases下载对应系统版本的二进制文件
-添加环境变量或者链接，方便使用
-#Mac下安装(没试过) brew install hugo   生成站点  #以windows为例，自定义站点路径D:\BlogServer\site\ hugo new site D:\BlogServer\site\  #目录结构 archetypes/ content/ data/ layouts/ resources/ static/ themes/ config.toml   创建文章  #被创建到content/下 hugo new hello.md #被创建到content/blog下 hugo new blog/HuGo搭建个人博客.md  #HuGo搭建个人博客.md有如下初始化内容 #去掉draft: true或者改为false才可以在运行时不指定buildDrafts时展示出该文章 title: &amp;quot;HuGo搭建个人博客&amp;quot; date: 2018-07-19T23:47:49+08:00 draft: true   安装皮肤  到皮肤列表挑选好看的皮肤，下载到themes/中。多下几个慢慢挑
-#hugo-redlounge是我现在在用的一个皮肤 cd themes git clone https://https://github.com/tmaiaroto/hugo-redlounge.git cd ..   配置皮肤等参数  #vim config.</description>
+#purehugo是我现在在用的一个皮肤 #hugo-redlounge的左半边加上purehugo的右半边不错 cd themes git clone https://github.com/dplesca/purehugo.git cd ..  5.配置皮肤等参数
+#vim config.toml #很关键的一条，theme必须要写，不然就panic baseURL = &amp;quot;https://wudengfeng.github.io/&amp;quot; languageCode = &amp;quot;cn&amp;quot; title = &amp;quot;爬山的博客&amp;quot; theme = &amp;quot;purehugo&amp;quot;  6.</description>
     </item>
     
   </channel>

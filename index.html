@@ -119,9 +119,10 @@ draft: true
 
 <p>到<a href="http://www.gohugo.org/theme/">皮肤列表</a>挑选好看的皮肤，下载到themes/中。多下几个慢慢挑</p>
 
-<pre><code class="language-shell">#hugo-redlounge是我现在在用的一个皮肤
+<pre><code class="language-shell">#purehugo是我现在在用的一个皮肤
+#hugo-redlounge的左半边加上purehugo的右半边不错
 cd themes
-git clone https://https://github.com/tmaiaroto/hugo-redlounge.git
+git clone https://github.com/dplesca/purehugo.git
 cd ..
 </code></pre>
 
@@ -130,10 +131,10 @@ cd ..
 <pre><code class="language-shell">#vim config.toml
 #很关键的一条，theme必须要写，不然就panic
    
-baseURL = &quot;http://localhost/&quot;
+baseURL = &quot;https://wudengfeng.github.io/&quot;
 languageCode = &quot;cn&quot;
 title = &quot;爬山的博客&quot;
-theme = &quot;hugo-redlounge&quot;
+theme = &quot;purehugo&quot;
 </code></pre>
 
 <p>6.<strong>运行hugo</strong></p>
@@ -145,142 +146,30 @@ hugo server &amp;
 
 <p>7.<strong>部署到github</strong> <em>【可选】</em></p>
 
-<p>//TODO</p>
+<p>在github上创建一个仓库，命名格式[username].github.io（比如wudengfeng.github.io）</p>
+
+<p>创建完这个仓库，在Setting-&gt;Github Pages-&gt;Theme Chooser-&gt;Change theme随便选一个主题，Select theme</p>
+
+<pre><code class="language-shell">#运行生成静态页面
+hugo server --baseUrl=&quot;https://wudengfeng.github.io/&quot;
+</code></pre>
+
+<p>静态页面生成到public目录下，将public目录下所有文件推送到master分支上</p>
+
+<pre><code class="language-shell">cd public
+git init
+git remote add origin https://github.com/wudengfeng/wudengfeng.github.io.git
+git add -A
+git commit -m &quot;first commit&quot;
+git push -u origin master
+</code></pre>
+
+<p>浏览器访问<a href="https://wudengfeng.github.io/">https://wudengfeng.github.io/</a></p>
 
 <blockquote>
 <p>参考<a href="http://www.gohugo.org/">Hugo中文文档</a></p>
 </blockquote>
 
-                    </div>
-                </section>
-                
-                <h1 class="content-subhead">18 Jul 2018, 23:59</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://wudengfeng.github.io/blog/first/" class="post-title">First</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
-
-<h3 id="hugo搭建个人博客">HuGo搭建个人博客</h3>
-
-<ol>
-<li><strong>安装hugo</strong></li>
-</ol>
-
-<p>在<a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a>下载对应系统版本的二进制文件</p>
-
-<p>添加环境变量或者链接，方便使用</p>
-
-<pre><code class="language-shell">   #Mac下安装(没试过)
-   brew install hugo
-</code></pre>
-
-<ol>
-<li><strong>生成站点</strong></li>
-</ol>
-
-<pre><code class="language-shell">   #以windows为例，自定义站点路径D:\BlogServer\site\
-   hugo new site D:\BlogServer\site\
-</code></pre>
-
-<pre><code class="language-shell">   #目录结构
-   archetypes/
-   content/
-   data/
-   layouts/
-   resources/
-   static/
-   themes/
-   config.toml
-</code></pre>
-
-<ol>
-<li><strong>创建文章</strong></li>
-</ol>
-
-<pre><code class="language-shell">   #被创建到content/下
-   hugo new hello.md
-   
-   #被创建到content/blog下
-   hugo new blog/HuGo搭建个人博客.md
-</code></pre>
-
-<pre><code class="language-yaml">   #HuGo搭建个人博客.md有如下初始化内容
-   #去掉draft: true或者改为false才可以在运行时不指定buildDrafts时展示出该文章
-   title: &quot;HuGo搭建个人博客&quot;
-   date: 2018-07-19T23:47:49+08:00
-   draft: true
-</code></pre>
-
-<ol>
-<li><strong>安装皮肤</strong></li>
-</ol>
-
-<p>到<a href="http://www.gohugo.org/theme/">皮肤列表</a>挑选好看的皮肤，下载到themes/中。多下几个慢慢挑</p>
-
-<pre><code class="language-shell">   #hugo-redlounge是我现在在用的一个皮肤
-   cd themes
-   git clone https://https://github.com/tmaiaroto/hugo-redlounge.git
-   cd ..
-</code></pre>
-
-<ol>
-<li><strong>配置皮肤等参数</strong></li>
-</ol>
-
-<pre><code class="language-shell">   #vim config.toml
-   #很关键的一条，theme必须要写，不然就panic
-   
-   baseURL = &quot;http://localhost/&quot;
-   languageCode = &quot;en-us&quot;
-   title = &quot;爬山的博客&quot;
-   theme = &quot;hugo-redlounge&quot;
-</code></pre>
-
-<ol>
-<li><strong>运行hugo</strong></li>
-</ol>
-
-<pre><code class="language-shell">   #默认端口1313
-   hugo server &amp;
-   #调试模式加参数 --buildDrafts，可以看到draft: true的文章
-</code></pre>
-
-<ol>
-<li><strong>部署到github</strong> <em>【可选】</em></li>
-</ol>
-
-<p>//TODO</p>
-
-<blockquote>
-<p>参考<a href="http://www.gohugo.org/">Hugo中文文档</a></p>
-</blockquote>
-
-                    </div>
-                </section>
-                
-                <h1 class="content-subhead">18 Jul 2018, 23:58</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://wudengfeng.github.io/ps/" class="post-title">Ps</a>
-
-                        <p class="post-meta">
-                            
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
                     </div>
                 </section>
                 
