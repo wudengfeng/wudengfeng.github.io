@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuGo搭建个人博客 &middot; 爬山的博客</title>
+
+    <meta name="description" content="">
+
+    <meta name="generator" content="Hugo 0.44" />
+    <meta name="twitter:card" content="summary">
+    
+    <meta name="twitter:title" content="HuGo搭建个人博客 &middot; 爬山的博客">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HuGo搭建个人博客 &middot; 爬山的博客">
+    <meta property="og:description" content="">
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="https://wudengfeng.github.io//css/all.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/rss+xml" title="爬山的博客" href="https://wudengfeng.github.io//index.xml" />
+</head>
+<body>
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="https://wudengfeng.github.io/">爬山的博客</a></h1>
+            <h2 class="brand-tagline"></h2>
+        </hgroup>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                
+                
+                
+                
+                <li class="nav-item">
+                    <a class="pure-button" href="https://wudengfeng.github.io//index.xml">
+                        <i class="fa fa-rss"></i> rss
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            
+            <div class="posts">
+                <h1 class="content-subhead">19 Jul 2018, 23:47</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://wudengfeng.github.io/blog/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title">HuGo搭建个人博客</a>
+
+                        <p class="post-meta">
+                            
+                            
+                        </p>
+                    </header>
+                    
+                    <div class="post-share">
+                        <div class="post-share-links">
+                            <h4 style="">Share</h4>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="post-description">
+                        <p>1.<strong>安装hugo</strong></p>
+
+<p>在<a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a>下载对应系统版本的二进制文件</p>
+
+<p>添加环境变量或者链接，方便使用</p>
+
+<pre><code class="language-shell">#Mac下安装(没试过)
+brew install hugo
+</code></pre>
+
+<p>2.<strong>生成站点</strong></p>
+
+<pre><code class="language-shell">#以windows为例，自定义站点路径D:\BlogServer\site\
+hugo new site D:\BlogServer\site\
+</code></pre>
+
+<pre><code class="language-shell">#目录结构
+archetypes/
+content/
+data/
+layouts/
+resources/
+static/
+themes/
+config.toml
+</code></pre>
+
+<p>3.<strong>创建文章</strong></p>
+
+<pre><code class="language-shell">#被创建到content/下
+hugo new hello.md
+   
+#被创建到content/blog下
+hugo new blog/HuGo搭建个人博客.md
+</code></pre>
+
+<pre><code class="language-yaml">#HuGo搭建个人博客.md有如下初始化内容
+#去掉draft: true或者改为false才可以在运行时不指定buildDrafts时展示出该文章
+title: &quot;HuGo搭建个人博客&quot;
+date: 2018-07-19T23:47:49+08:00
+draft: true
+</code></pre>
+
+<p>4.<strong>安装皮肤</strong></p>
+
+<p>到<a href="http://www.gohugo.org/theme/">皮肤列表</a>挑选好看的皮肤，下载到themes/中。多下几个慢慢挑</p>
+
+<pre><code class="language-shell">#hugo-redlounge是我现在在用的一个皮肤
+cd themes
+git clone https://https://github.com/tmaiaroto/hugo-redlounge.git
+cd ..
+</code></pre>
+
+<p>5.<strong>配置皮肤等参数</strong></p>
+
+<pre><code class="language-shell">#vim config.toml
+#很关键的一条，theme必须要写，不然就panic
+   
+baseURL = &quot;http://localhost/&quot;
+languageCode = &quot;cn&quot;
+title = &quot;爬山的博客&quot;
+theme = &quot;hugo-redlounge&quot;
+</code></pre>
+
+<p>6.<strong>运行hugo</strong></p>
+
+<pre><code class="language-shell">#默认端口1313
+hugo server &amp;
+#调试模式加参数 --buildDrafts，可以看到draft: true的文章
+</code></pre>
+
+<p>7.<strong>部署到github</strong> <em>【可选】</em></p>
+
+<p>//TODO</p>
+
+<blockquote>
+<p>参考<a href="http://www.gohugo.org/">Hugo中文文档</a></p>
+</blockquote>
+
+                    </div>
+                    
+                </section>
+            </div>
+            <div class="footer">
+    <div class="pure-menu pure-menu-horizontal pure-menu-open">
+        <ul>
+            <li>Powered by <a class="hugo" href="https://gohugo.io/" target="_blank">hugo</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://wudengfeng.github.io//js/all.min.js"></script>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
